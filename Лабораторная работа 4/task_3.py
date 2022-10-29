@@ -1,9 +1,7 @@
-def delete(list_, index=None):
-    if index is None:
+def delete(list_, index=-1):
+    if index == -1:
         index = len(list_) - 1
-    list1 = list_[:index]
-    list2 = list_[index+1:]
-    list_ = list1 + list2
+    list_ = list_[:index] + list_[index+1:]
     return list_
 
 print(delete([0, 0, 1, 2], index=0))
