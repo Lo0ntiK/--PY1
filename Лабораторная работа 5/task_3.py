@@ -3,10 +3,14 @@ from random import randint, shuffle
 
 def get_unique_list_numbers() -> list[int]:
     list_ = []
-    while len(set(list_)) != 15:
-        list_.append(randint(-10,10))
-    list_ = list(set(list_))
-    shuffle(list_)
+    for _ in range(15):
+        while True:
+            number = randint(-10,10)
+            if not number in list_:
+                list_.append(number)
+                break
+            else:
+                continue
     return list_
 
 
